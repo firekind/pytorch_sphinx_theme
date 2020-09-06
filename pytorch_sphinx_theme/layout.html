@@ -85,8 +85,23 @@
 <div class="container-fluid header-holder tutorials-header" id="header-holder">
   <div class="container">
     <div class="header-container">
-      <h1> {{ project }}</h1>
+      <a href= "{{ pathto(master_doc) }}">
+        <h1 class="header-logo" style="margin: 0px">
+          {{ project }}
+        </h1>
+      </a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="{{ github_url }}">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
     </div>
+
   </div>
 </div>
 
@@ -239,15 +254,41 @@
 
   <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
     <div class="container">
-        <p>
-          Built with Sphinx and the 
-          <a href="https://github.com/pytorch/pytorch_sphinx_theme">pytorch sphinx theme</a>
-        </p>
-        
+      <p>
+        Built with Sphinx and the 
+        <a href="https://github.com/pytorch/pytorch_sphinx_theme">pytorch sphinx theme</a>
+      </p>
     </div>
   </div>
 
-  <!-- {% include "cookie_banner.html" %} -->
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="{{ pathto(master_doc) }}">
+            {{ project }}
+          </a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="{{ github_url }}">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
 
   <script type="text/javascript" src="{{ pathto('_static/js/vendor/anchor.min.js', 1) }}"></script>
 
@@ -270,3 +311,4 @@
   </script>
 </body>
 </html>
+
